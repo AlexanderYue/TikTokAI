@@ -25,7 +25,7 @@ model = whisper.load_model("tiny")
 pipe = pipeline("text-classification", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
 
 #gen_url = "https://api.aivideoapi.com/runway/generate/text"
-
+#test
 
 client = OpenAI(
     api_key = os.getenv('OpenAIKey')
