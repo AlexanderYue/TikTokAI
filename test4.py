@@ -59,3 +59,16 @@ if response.status_code == 200:
 else:
     print(f"Request failed with status code {response.status_code}")
     print(response.text)
+
+
+#            {
+#                "avatar_id": "Bryan_IT_Sitting_public",
+#                "avatar_name": "Bryan Tech Expert",
+#                "gender": "male",
+#                "preview_image_url": "https://files2.heygen.ai/avatar/v3/33c9ac4aead44dfc8bc0082a35062a70_45580/preview_talk_3.webp",
+#                "preview_video_url": "https://files2.heygen.ai/avatar/v3/33c9ac4aead44dfc8bc0082a35062a70_45580/preview_video_talk_3.mp4",
+#                "premium": false,
+#                "type": null,
+#                "tags": null,
+#                "default_voice_id": null
+#            },

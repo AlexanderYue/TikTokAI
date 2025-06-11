@@ -24,14 +24,15 @@ model = whisper.load_model("tiny")
 
 pipe = pipeline("text-classification", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
 
-#gen_url = "https://api.aivideoapi.com/runway/generate/text"
-#test
+
+username = "cnn" #change this per user
+
 
 client = OpenAI(
     api_key = os.getenv('OpenAIKey')
 )
 
-def videoSynth(message):
+def videoSynth(message): #NOT FINISHED
     # Define the payload for the API request
     payload = {
         "text_prompt": "news presentation, argumentative, " + message,  # Fixed spelling error and spacing
@@ -55,7 +56,7 @@ def videoSynth(message):
     return response.text
 
 
-def askLLM(message, comments):
+def askLLM(message, comments): #This function prompts the LLM, in this case GPT o1-preview
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -84,7 +85,7 @@ async def get_comments(video_id, filename):
                 append_to_file(filename, comment.text)
 
 
-def transcribe_audio(file_path):
+def transcribe_audio(file_path): #transcribes the audio using OpenAI Whisper
     print(file_path)
     result = model.transcribe(file_path)
     return result['text']
@@ -148,14 +149,13 @@ def sentimentAnalysis(filename, text):
 
 async def user_example():
     async with TikTokApi() as api:
-        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, browser = 'chromium', headless = False)
-        username = "cnn" #change this per user
+        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3, browser = 'chromium', headless = False) #starts tiktok session
         user = api.user(username)
-        user_data = await user.info()
-        save_to_file("info/user_info.json", user_data)
+        user_data = await user.info() #gets user data from API
+        save_to_file("info/user_info.json", user_data) #saves to file
         #print(user_data)
         vidCnt = 0
-        async for video in user.videos(count=30):
+        async for video in user.videos(count=30): #Starts running analyzer for videos created by user, limited at 30
             vidCnt += 1
             # Extract the video ID
             match = re.search(r"id='(\d+)'", str(video))
@@ -173,19 +173,28 @@ async def user_example():
                 print("")
                 print("-------------------Video is not correct data type, skipping transcription-------------------")
                 print("")
-            audioPass = transcribe_audio("audio.mp3")
+            
+            
+            audioPass = transcribe_audio("audio.mp3") #transcribes audio
+
             folder = f"vid{vidCnt}"
-            os.makedirs(folder, exist_ok=True)
-            filename = os.path.join(folder, "transcript.json")
+            os.makedirs(folder, exist_ok=True) #create new folder for video
+
+
+            filename = os.path.join(folder, "transcript.json") #this chunk saves relevant files to the folder
             commentFilename = os.path.join(folder, "comments.json")
             arguementFilename = os.path.join(folder, "counter.json")
-            await get_comments(vidID, commentFilename)
+
+
+            await get_comments(vidID, commentFilename)#extracts comments and saves to file
             with open (commentFilename, 'r') as f:
                 comments = f.read()
-            script = askLLM(audioPass, comments)
+
+
+            script = askLLM(audioPass, comments) #passes comments and audio transcription to a function that will return script.
             print("This is script: ", script)
             save_to_file(arguementFilename, script)
-            print(videoSynth(script))
+            #print(videoSynth(script))
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(audioPass)
 
