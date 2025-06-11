@@ -117,10 +117,12 @@ def download_audio_from_tiktok(url):
         print(f"An error occurred: {e}")
         return False
 
+
 def save_to_file(filepath, data):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+
 
 def append_to_file(filepath, data):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
@@ -131,6 +133,7 @@ def append_to_file(filepath, data):
             f.write(',\n')
         json.dump(data, f, ensure_ascii=False, indent=4)
     # No need to close the file manually, as 'with' handles that
+
 
 # Sentiment analysis function
 def sentimentAnalysis(filename, text):
