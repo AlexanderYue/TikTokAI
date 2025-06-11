@@ -1,6 +1,5 @@
 from TikTokApi import TikTokApi
 from dotenv import load_dotenv
-from pinecone import Pinecone, ServerlessSpec
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 from proxyproviders import Webshare
@@ -20,6 +19,7 @@ load_dotenv()
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 ms_token = os.environ.get("MS_TOKEN")  # Get your ms_token from environment variables
+synthKey = os.environ.get("synthKey")
 model = whisper.load_model("tiny")
 
 pipe = pipeline("text-classification", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
@@ -49,7 +49,7 @@ def videoSynth(message): #NOT FINISHED
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-        "Authorization": "174ced9bf7c12470088e23fcac9dcb911"  # Added 'Bearer' for token-based authorization
+        "Authorization": synthKey  # Added 'Bearer' for token-based authorization
     }
     response = requests.post(gen_url, json=payload, headers=headers)
 
@@ -57,7 +57,7 @@ def videoSynth(message): #NOT FINISHED
 
 
 def askLLM(message, comments): #This function prompts the LLM, in this case GPT o1-preview
-    chat_completion = client.chat.completions.create(
+    chat_completion = client.chat.completions.create( #API call
         messages=[
             {
                 "role": "user",
@@ -83,6 +83,7 @@ async def get_comments(video_id, filename):
                 print(comment.text)  # Print comment text to console
                 sentimentAnalysis(filename, comment.text)
                 append_to_file(filename, comment.text)
+
 
 
 def transcribe_audio(file_path): #transcribes the audio using OpenAI Whisper
