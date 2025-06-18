@@ -1,14 +1,14 @@
 {
     "extra": {
         "fatal_item_ids": [],
-        "logid": "202506111633431EA6094A0937210A56AE",
-        "now": 1749659623000
+        "logid": "20250611193016BD6167812D1D811144DD",
+        "now": 1749670216000
     },
     "log_pb": {
-        "impr_id": "202506111633431EA6094A0937210A56AE"
+        "impr_id": "20250611193016BD6167812D1D811144DD"
     },
     "shareMeta": {
-        "desc": "@cnn 9.3m Followers, 22 Following, 346.3m Likes - Watch awesome short videos created by CNN",
+        "desc": "@cnn 9.3m Followers, 22 Following, 346.5m Likes - Watch awesome short videos created by CNN",
         "title": "CNN on TikTok"
     },
     "statusCode": 0,
@@ -20,23 +20,23 @@
             "followerCount": 9300000,
             "followingCount": 22,
             "friendCount": 20,
-            "heart": 346300000,
-            "heartCount": 346300000,
-            "videoCount": 7547
+            "heart": 346500000,
+            "heartCount": 346500000,
+            "videoCount": 7549
         },
         "statsV2": {
             "diggCount": "0",
-            "followerCount": "9280985",
+            "followerCount": "9282801",
             "followingCount": "22",
             "friendCount": "20",
-            "heart": "346311678",
-            "heartCount": "346311678",
-            "videoCount": "7547"
+            "heart": "346478144",
+            "heartCount": "346478144",
+            "videoCount": "7549"
         },
         "user": {
-            "avatarLarger": "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640&refresh_token=087169ee&x-expires=1749830400&x-signature=uwaMPihH%2F1sVnfkuzmiMoAMZhpo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-            "avatarMedium": "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=e4f7528b&x-expires=1749830400&x-signature=NM0SGKFPwaAK0bOnYol33IJzpWs%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
-            "avatarThumb": "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:100:100.jpeg?dr=9640&refresh_token=11204582&x-expires=1749830400&x-signature=ateZk%2FW22zkYGlSR9t620b8oOvo%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+            "avatarLarger": "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=9640&refresh_token=d1df4915&x-expires=1749841200&x-signature=ItPMS3GVOFHyZ8%2FLpBYOQHTavEU%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+            "avatarMedium": "https://p16-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=9836a53e&x-expires=1749841200&x-signature=%2F1542dfgco%2FB29hpK9SXYPmtbak%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=f20df69d&idc=useast5",
+            "avatarThumb": "https://p19-pu-sign-useast8.tiktokcdn-us.com/tos-useast5-avt-0068-tx/99d43f49d3f1749ffa85f5954ca10a8c~tplv-tiktokx-cropcenter:100:100.jpeg?dr=9640&refresh_token=4d5fed1f&x-expires=1749841200&x-signature=Rok2XyXaLTDFMA%2Bm6vxbYZc0sNQ%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=f20df69d&idc=useast5",
             "bioLink": {
                 "link": "cnn.com",
                 "risk": 0
